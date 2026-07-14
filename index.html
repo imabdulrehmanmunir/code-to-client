@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Primary Meta Tags -->
+    <title>Code to Client | 6-Week Web Development Masterclass</title>
+    <meta name="title" content="Code to Client | 6-Week Web Development Masterclass">
+    <meta name="description" content="Master full-stack web development and land high-paying clients in just 6 weeks. Learn from industry experts with 5+ years of experience. Top students get internship opportunities at GrowthLift Digital.">
+    <meta name="keywords" content="web development course, learn HTML CSS JS, frontend developer course, client hunting, freelance web developer, GrowthLift Digital internship, code to client">
+    <meta name="author" content="GrowthLift Digital">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://codetoclient.vercel.app/" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://codetoclient.vercel.app/">
+    <meta property="og:title" content="Code to Client | Zero to Freelance Developer in 6 Weeks">
+    <meta property="og:description" content="Transform your career. Master coding and client acquisition. Apply now for a chance to intern at GrowthLift Digital.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://codetoclient.vercel.app/">
+    <meta property="twitter:title" content="Code to Client | Zero to Freelance Developer in 6 Weeks">
+    <meta property="twitter:description" content="Transform your career. Master coding and client acquisition. Apply now for a chance to intern at GrowthLift Digital.">
+    <meta property="twitter:image" content="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80">
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Course",
+      "name": "Code to Client Masterclass",
+      "description": "A comprehensive 6-week bootcamp teaching full-stack web development and freelance client acquisition.",
+      "provider": {
+        "@type": "Organization",
+        "name": "GrowthLift Digital",
+        "sameAs": "https://codetoclient.vercel.app/"
+      },
+      "educationalCredentialAwarded": "Certificate of Completion & Internship Opportunity",
+      "timeRequired": "P6W"
+    }
+    </script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- FontAwesome & Google Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+
+    <!-- Tailwind Config & Custom CSS -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            dark: '#0B0F19',
+                            card: '#111827',
+                            primary: '#00E5FF',
+                            secondary: '#7C3AED',
+                        }
+                    },
+                    animation: {
+                        'blob': 'blob 7s infinite',
+                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+                    },
+                    keyframes: {
+                        blob: {
+                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
+                            '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+                            '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+                            '100%': { transform: 'translate(0px, 0px) scale(1)' },
+                        },
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(30px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #0B0F19;
+            color: #F3F4F6;
+            overflow-x: hidden;
+        }
+        
+        .glass-nav {
+            background: rgba(11, 15, 25, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .glass-card {
+            background: rgba(17, 24, 39, 0.6);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .glass-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(0, 229, 255, 0.3);
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, #00E5FF 0%, #7C3AED 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Timeline Styles */
+        .timeline-container::after {
+            content: '';
+            position: absolute;
+            width: 2px;
+            background: linear-gradient(to bottom, #00E5FF, #7C3AED);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -1px;
+            opacity: 0.3;
+        }
+        
+        @media screen and (max-width: 768px) {
+            .timeline-container::after {
+                left: 31px;
+            }
+        }
+
+        /* Scroll Animation Classes */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Glowing Button */
+        .btn-glow {
+            position: relative;
+        }
+        .btn-glow::before {
+            content: '';
+            position: absolute;
+            top: -2px; left: -2px; right: -2px; bottom: -2px;
+            background: linear-gradient(45deg, #00E5FF, #7C3AED, #00E5FF);
+            z-index: -1;
+            border-radius: 9999px;
+            background-size: 400%;
+            animation: glowing 20s linear infinite;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+        .btn-glow:hover::before {
+            opacity: 1;
+        }
+        @keyframes glowing {
+            0% { background-position: 0 0; }
+            50% { background-position: 400% 0; }
+            100% { background-position: 0 0; }
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-brand-primary selection:text-brand-dark">
+
+    <!-- Background Animated Blobs -->
+    <div class="fixed top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
+        <div class="absolute top-[-10%] left-[-10%] w-96 h-96 bg-brand-secondary/20 rounded-full mix-blend-screen filter blur-3xl opacity-50 animate-blob"></div>
+        <div class="absolute top-[20%] right-[-10%] w-96 h-96 bg-brand-primary/20 rounded-full mix-blend-screen filter blur-3xl opacity-50 animate-blob animation-delay-2000"></div>
+        <div class="absolute bottom-[-20%] left-[20%] w-96 h-96 bg-purple-500/20 rounded-full mix-blend-screen filter blur-3xl opacity-50 animate-blob animation-delay-4000"></div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 glass-nav transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center gap-2 cursor-pointer">
+                    <!-- Placeholder for Logo -->
+                    <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-brand-primary to-brand-secondary flex items-center justify-center text-brand-dark font-bold text-xl shadow-[0_0_15px_rgba(0,229,255,0.5)]">
+                        <i class="fa-solid fa-code"></i>
+                    </div>
+                    <span class="font-bold text-xl tracking-tight text-white">Code<span class="text-brand-primary">2</span>Client</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#about" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">About Us</a>
+                    <a href="#timeline" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">Course Timeline</a>
+                    <a href="#partner" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">Internship</a>
+                    <a href="#enroll" class="px-6 py-2.5 rounded-full bg-white/10 hover:bg-white/20 border border-white/10 text-white font-medium transition-all hover:scale-105">
+                        Register Now
+                    </a>
+                </div>
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-300 hover:text-white focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+      <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden glass-nav border-t border-white/10">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-white/5">About Us</a>
+                <a href="#timeline" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-white/5">Course Timeline</a>
+                <a href="#partner" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-white/5">Internship</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden flex items-center min-h-screen">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-primary/10 border border-brand-primary/20 text-brand-primary mb-8 animate-fade-in-up">
+                <span class="relative flex h-3 w-3">
+                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-primary opacity-75"></span>
+                  <span class="relative inline-flex rounded-full h-3 w-3 bg-brand-primary"></span>
+                </span>
+                <span class="text-sm font-semibold tracking-wide uppercase">Registrations Open for Cohort 1</span>
+            </div>
+            
+            <h1 class="text-5xl md:text-7xl font-black mb-6 leading-tight tracking-tighter opacity-0 animate-[fadeInUp_0.8s_ease-out_0.2s_forwards]">
+                From Blank Canvas to <br class="hidden md:block" />
+                <span class="text-gradient">High-Paying Clients.</span>
+            </h1>
+            
+            <p class="mt-4 text-xl md:text-2xl text-gray-400 max-w-3xl mx-auto mb-10 opacity-0 animate-[fadeInUp_0.8s_ease-out_0.4s_forwards] font-light">
+                Master modern web development and learn the exact frameworks to hunt, pitch, and close freelance clients in just 6 weeks.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4 opacity-0 animate-[fadeInUp_0.8s_ease-out_0.6s_forwards]">
+                <!-- WhatsApp Dynamic Link -->
+                <a href="https://wa.me/923213700863?text=Hi!%20I%20want%20to%20know%20more%20about%20the%20Code%20to%20Client%20web%20development%20course." 
+                   target="_blank"
+                   class="w-full sm:w-auto px-8 py-4 rounded-full bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-400 hover:to-emerald-500 text-white font-bold text-lg shadow-[0_0_20px_rgba(16,185,129,0.3)] transition-all transform hover:-translate-y-1 hover:shadow-[0_0_30px_rgba(16,185,129,0.5)] flex items-center justify-center gap-3">
+                    <i class="fa-brands fa-whatsapp text-2xl"></i>
+                    Message on WhatsApp
+                </a>
+                
+                <!-- Google Form Link -->
+                <a href="https://forms.gle/YOUR_FORM_LINK_HERE" 
+                   target="_blank"
+                   class="w-full sm:w-auto btn-glow px-8 py-4 rounded-full bg-brand-card border border-white/10 hover:bg-white/5 text-white font-bold text-lg transition-all flex items-center justify-center gap-3 group">
+                    Register via Form
+                    <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                </a>
+            </div>
+            
+            <div class="mt-16 pt-8 border-t border-white/10 flex flex-wrap justify-center gap-8 md:gap-16 opacity-0 animate-[fadeInUp_0.8s_ease-out_0.8s_forwards]">
+                <div class="text-center">
+                    <p class="text-3xl font-black text-white">6</p>
+                    <p class="text-sm text-gray-400 uppercase tracking-widest mt-1">Weeks</p>
+                </div>
+                <div class="text-center">
+                    <p class="text-3xl font-black text-white">100%</p>
+                    <p class="text-sm text-gray-400 uppercase tracking-widest mt-1">Practical</p>
+                </div>
+                <div class="text-center">
+                    <p class="text-3xl font-black text-brand-primary"><i class="fa-solid fa-briefcase"></i></p>
+                    <p class="text-sm text-brand-primary uppercase tracking-widest mt-1">Internship Included</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- About Section -->
+    <section id="about" class="py-24 relative z-10 bg-black/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="reveal">
+                    <h2 class="text-sm font-bold text-brand-primary tracking-widest uppercase mb-3">Who Are We?</h2>
+                    <h3 class="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">5 Years of Building the Web. <br/><span class="text-gray-500">Now We Build You.</span></h3>
+                    <p class="text-lg text-gray-300 mb-6 leading-relaxed">
+                        We aren't just theoreticians. We are active industry professionals who have spent the last 5+ years building robust web applications, scaling agencies, and hunting high-ticket international clients.
+                    </p>
+                    <p class="text-lg text-gray-300 mb-8 leading-relaxed">
+                        <strong>Code to Client</strong> was born out of frustration with generic coding bootcamps that leave you jobless. We teach you how to write clean code AND how to sell it. It's the complete blueprint.
+                    </p>
+                    
+                    <ul class="space-y-4">
+                        <li class="flex items-center gap-3 text-gray-200">
+                            <i class="fa-solid fa-circle-check text-brand-primary"></i> Real-world project building.
+                        </li>
+                        <li class="flex items-center gap-3 text-gray-200">
+                            <i class="fa-solid fa-circle-check text-brand-primary"></i> Proven outreach scripts for Upwork & LinkedIn.
+                        </li>
+                        <li class="flex items-center gap-3 text-gray-200">
+                            <i class="fa-solid fa-circle-check text-brand-primary"></i> Direct mentorship & code reviews.
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="relative reveal grid grid-cols-2 gap-4">
+                    <div class="glass-card p-6 rounded-2xl text-center transform translate-y-8">
+                        <i class="fa-solid fa-laptop-code text-4xl text-brand-primary mb-4"></i>
+                        <h4 class="text-xl font-bold text-white mb-2">Modern Stack</h4>
+                        <p class="text-sm text-gray-400">HTML, CSS, JS, Tailwind & Framework basics.</p>
+                    </div>
+                    <div class="glass-card p-6 rounded-2xl text-center">
+                        <i class="fa-solid fa-bullseye text-4xl text-brand-secondary mb-4"></i>
+                        <h4 class="text-xl font-bold text-white mb-2">Client Hunting</h4>
+                        <p class="text-sm text-gray-400">Master Upwork, Fiverr, and outbound sales.</p>
+                    </div>
+                    <div class="glass-card p-6 rounded-2xl text-center col-span-2">
+                        <i class="fa-solid fa-certificate text-4xl text-emerald-400 mb-4"></i>
+                        <h4 class="text-xl font-bold text-white mb-2">Agency Blueprint</h4>
+                        <p class="text-sm text-gray-400">Learn how to transition from a solo freelancer to building your own digital agency.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Course Timeline Section -->
+    <section id="timeline" class="py-24 relative z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-sm font-bold text-brand-primary tracking-widest uppercase mb-3">The Blueprint</h2>
+                <h3 class="text-4xl md:text-5xl font-bold text-white">Your 6-Week Transformation</h3>
+            </div>
+
+            <div class="relative timeline-container max-w-4xl mx-auto">
+                
+                <!-- Week 1 -->
+                <div class="mb-12 flex justify-between items-center w-full md:flex-row flex-col reveal">
+                    <div class="order-1 w-full md:w-5/12 hidden md:block"></div>
+                    <div class="z-20 flex items-center order-1 bg-brand-dark shadow-xl w-14 h-14 rounded-full border-4 border-brand-primary absolute left-[14px] md:left-1/2 transform md:-translate-x-1/2">
+                        <h1 class="mx-auto font-bold text-lg text-white">W1</h1>
+                    </div>
+                    <div class="order-1 glass-card rounded-2xl w-full md:w-5/12 px-6 py-6 pl-16 md:pl-6">
+                        <h3 class="mb-2 font-bold text-xl text-brand-primary">The Foundation: UI & Design</h3>
+                        <p class="text-gray-300 text-sm leading-relaxed">
+                            Deep dive into structural web design. Master HTML5 semantic tags, modern CSS3 (Flexbox/Grid), and responsive design principles to build pixel-perfect interfaces.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Week 2 -->
+                <div class="mb-12 flex justify-between items-center w-full md:flex-row flex-col reveal">
+                    <div class="order-1 glass-card rounded-2xl w-full md:w-5/12 px-6 py-6 pl-16 md:pl-6 md:text-right">
+                        <h3 class="mb-2 font-bold text-xl text-brand-secondary">Logic Building: JavaScript Core</h3>
+                        <p class="text-gray-300 text-sm leading-relaxed">
+                            Breathe life into static pages. Learn variables, loops, DOM manipulation, events, and ES6+ modern features. Build interactive mini-projects.
+                        </p>
+                    </div>
+                    <div class="z-20 flex items-center order-1 bg-brand-dark shadow-xl w-14 h-14 rounded-full border-4 border-brand-secondary absolute left-[14px] md:left-1/2 transform md:-translate-x-1/2">
+                        <h1 class="mx-auto font-bold text-lg text-white">W2</h1>
+                    </div>
+                    <div class="order-1 w-full md:w-5/12 hidden md:block"></div>
+                </div>
+              <!-- Week 3 -->
+                <div class="mb-12 flex justify-between items-center w-full md:flex-row flex-col reveal">
+                    <div class="order-1 w-full md:w-5/12 hidden md:block"></div>
+                    <div class="z-20 flex items-center order-1 bg-brand-dark shadow-xl w-14 h-14 rounded-full border-4 border-brand-primary absolute left-[14px] md:left-1/2 transform md:-translate-x-1/2">
+                        <h1 class="mx-auto font-bold text-lg text-white">W3</h1>
+                    </div>
+                    <div class="order-1 glass-card rounded-2xl w-full md:w-5/12 px-6 py-6 pl-16 md:pl-6">
+                        <h3 class="mb-2 font-bold text-xl text-brand-primary">Speed & Style: Tailwind CSS</h3>
+                        <p class="text-gray-300 text-sm leading-relaxed">
+                            Stop writing raw CSS. Learn utility-first styling with Tailwind CSS. Rapidly prototype beautiful, responsive dashboards and landing pages in record time.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Week 4 -->
+                <div class="mb-12 flex justify-between items-center w-full md:flex-row flex-col reveal">
+                    <div class="order-1 glass-card rounded-2xl w-full md:w-5/12 px-6 py-6 pl-16 md:pl-6 md:text-right">
+                        <h3 class="mb-2 font-bold text-xl text-brand-secondary">Advanced Frontend & APIs</h3>
+                        <p class="text-gray-300 text-sm leading-relaxed">
+                            Connect your UI to the real world. Fetching data, handling JSON, understanding RESTful APIs, and asynchronous JavaScript (Promises/Async-Await).
+                        </p>
+                    </div>
+                    <div class="z-20 flex items-center order-1 bg-brand-dark shadow-xl w-14 h-14 rounded-full border-4 border-brand-secondary absolute left-[14px] md:left-1/2 transform md:-translate-x-1/2">
+                        <h1 class="mx-auto font-bold text-lg text-white">W4</h1>
+                    </div>
+                    <div class="order-1 w-full md:w-5/12 hidden md:block"></div>
+                </div>
+
+                <!-- Week 5 -->
+                <div class="mb-12 flex justify-between items-center w-full md:flex-row flex-col reveal">
+                    <div class="order-1 w-full md:w-5/12 hidden md:block"></div>
+                    <div class="z-20 flex items-center order-1 bg-brand-dark shadow-xl w-14 h-14 rounded-full border-4 border-emerald-400 absolute left-[14px] md:left-1/2 transform md:-translate-x-1/2">
+                        <h1 class="mx-auto font-bold text-lg text-white">W5</h1>
+                    </div>
+                    <div class="order-1 glass-card rounded-2xl w-full md:w-5/12 px-6 py-6 pl-16 md:pl-6 border-emerald-400/30">
+                        <h3 class="mb-2 font-bold text-xl text-emerald-400">The Capstone Portfolio</h3>
+                        <p class="text-gray-300 text-sm leading-relaxed">
+                            Build your magnum opus. Assemble everything learned into a premium, hosted portfolio website. Learn Git, GitHub, and deployment strategies (Vercel/Netlify).
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Week 6 -->
+                <div class="mb-12 flex justify-between items-center w-full md:flex-row flex-col reveal">
+                    <div class="order-1 glass-card rounded-2xl w-full md:w-5/12 px-6 py-6 pl-16 md:pl-6 md:text-right border-brand-primary/50 bg-brand-primary/5">
+                        <h3 class="mb-2 font-bold text-2xl text-gradient">The Money: Client Hunting</h3>
+                        <p class="text-gray-300 text-sm leading-relaxed">
+                            The secret sauce. Profile optimization on Upwork & Fiverr. Crafting winning proposals. Cold outreach strategies on LinkedIn. Pricing your services and closing deals.
+                        </p>
+                    </div>
+                    <div class="z-20 flex items-center order-1 bg-gradient-to-r from-cyan-400 to-blue-500 shadow-[0_0_20px_rgba(0,229,255,0.6)] w-14 h-14 rounded-full absolute left-[14px] md:left-1/2 transform md:-translate-x-1/2 text-brand-dark">
+                        <i class="fa-solid fa-rocket text-xl mx-auto"></i>
+                    </div>
+                    <div class="order-1 w-full md:w-5/12 hidden md:block"></div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- Partner / Internship Section -->
+    <section id="partner" class="py-20 relative z-10">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="glass-card rounded-3xl p-8 md:p-12 border-brand-primary/30 relative overflow-hidden reveal shadow-[0_0_50px_rgba(0,229,255,0.1)]">
+                <!-- Decorative background shape -->
+                <div class="absolute -right-20 -top-20 w-64 h-64 bg-brand-primary/10 rounded-full blur-3xl"></div>
+                
+                <div class="flex flex-col md:flex-row items-center gap-10 relative z-10">
+                    <div class="w-full md:w-1/3 text-center">
+                        <div class="w-32 h-32 mx-auto rounded-2xl bg-gradient-to-br from-brand-primary to-brand-secondary flex items-center justify-center text-4xl text-white font-black shadow-2xl mb-4">
+                            GL
+                        </div>
+                        <h3 class="text-2xl font-bold text-white tracking-tight">GrowthLift</h3>
+                        <p class="text-brand-primary uppercase tracking-widest text-xs font-bold mt-1">Digital Agency</p>
+                    </div>
+                    
+                    <div class="w-full md:w-2/3">
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-bold uppercase tracking-wider mb-4">
+                            <i class="fa-solid fa-star"></i> Exclusive Partner Opportunity
+                        </div>
+                        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Launch Your Career with Guaranteed Agency Exposure.</h2>
+                        <p class="text-gray-300 mb-6 text-lg">
+                            We don't just teach you; we hire the best. <strong>GrowthLift Digital</strong> is the official agency partner for this bootcamp.
+                        </p>
+                        <p class="text-gray-400 mb-6">
+                            Top performing students who demonstrate exceptional skill, discipline, and work ethic during the 6 weeks will be exclusively selected for <span class="text-white font-bold border-b border-brand-primary">Paid or Unpaid Internships</span> directly at GrowthLift Digital. Get real-world agency experience immediately upon graduation.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section id="enroll" class="py-24 relative z-10 border-t border-white/5 bg-gradient-to-b from-transparent to-brand-primary/5">
+        <div class="max-w-4xl mx-auto px-4 text-center reveal">
+            <h2 class="text-4xl md:text-6xl font-black text-white mb-6">Stop Learning.<br> Start <span class="text-gradient">Earning.</span></h2>
+            <p class="text-xl text-gray-400 mb-10 max-w-2xl mx-auto">
+                Seats for the upcoming cohort are strictly limited to ensure quality mentorship. Reserve your spot today.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-6">
+                <!-- WhatsApp Link -->
+                <a href="https://wa.me/923213700863?text=Hi!%20I%20want%20to%20know%20more%20about%20the%20Code%20to%20Client%20web%20development%20course." 
+                   target="_blank"
+                   class="w-full sm:w-auto px-10 py-5 rounded-full bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-400 hover:to-emerald-500 text-white font-bold text-xl shadow-[0_0_20px_rgba(16,185,129,0.3)] transition-all transform hover:-translate-y-1 flex items-center justify-center gap-3">
+                    <i class="fa-brands fa-whatsapp text-3xl"></i>
+                    Chat on WhatsApp
+                </a>
+                
+                <!-- Google Form Link -->
+                <a href="https://forms.gle/YOUR_FORM_LINK_HERE" 
+                   target="_blank"
+                   class="w-full sm:w-auto px-10 py-5 rounded-full glass-card hover:bg-white/10 text-white font-bold text-xl transition-all border border-brand-primary/50 hover:border-brand-primary">
+                    Fill Registration Form
+                </a>
+            </div>
+            <p class="mt-6 text-sm text-gray-500">Contact: +92 321 3700863 | Response time: < 1 hour</p>
+        </div>
+    </section>
+<!-- Footer -->
+    <footer class="py-8 border-t border-white/10 relative z-10 bg-[#060910]">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
+            <div class="text-gray-400 text-sm">
+                &copy; <span id="year"></span> Code to Client by GrowthLift Digital. All rights reserved.
+            </div>
+            <div class="flex gap-4">
+                <a href="#" class="text-gray-500 hover:text-white transition-colors"><i class="fa-brands fa-linkedin text-xl"></i></a>
+                <a href="#" class="text-gray-500 hover:text-white transition-colors"><i class="fa-brands fa-instagram text-xl"></i></a>
+                <a href="#" class="text-gray-500 hover:text-white transition-colors"><i class="fa-brands fa-twitter text-xl"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Animations and Logic -->
+    <script>
+        // Set current year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Navbar Scroll Effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 20) {
+                navbar.classList.add('shadow-lg');
+                navbar.style.background = 'rgba(11, 15, 25, 0.9)';
+            } else {
+                navbar.classList.remove('shadow-lg');
+                navbar.style.background = 'rgba(11, 15, 25, 0.7)';
+            }
+        });
+
+        // Intersection Observer for Scroll Animations
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 100;
+                
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+        window.addEventListener("scroll", reveal);
+        // Trigger once on load
+        reveal();
+    </script>
+</body>
+</html>
